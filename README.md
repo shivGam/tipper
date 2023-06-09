@@ -1,7 +1,7 @@
 # Tippy - Tip Calculator 
 
 <p float="middle">
-    <img src="https://raw.githubusercontent.com/shivGam/Tippy/main/framed.png" width="300">
+    <img src="frame.png" width="300">
 </p>
 
 **Author:** [Shivdatt Jangam](https://www.linkedin.com/in/shivdatt-jangam-96b814254/)
