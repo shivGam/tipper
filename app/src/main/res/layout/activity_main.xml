@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/amountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="100dp"
+        android:text="Amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/percentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/splitLabel"
+        app:layout_constraintTop_toBottomOf="@+id/amountLabel"
+        tools:text="24%" />
+
+    <TextView
+        android:id="@+id/tipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="Tip"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/percentLabel"
+        app:layout_constraintTop_toBottomOf="@+id/percentLabel" />
+
+    <TextView
+        android:id="@+id/totalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Final Amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/tipLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tipLabel" />
+
+    <EditText
+        android:id="@+id/amountInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:ems="6"
+        android:hint="Bill"
+        android:inputType="numberDecimal"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/amountLabel"
+        app:layout_constraintStart_toEndOf="@+id/amountLabel"
+        app:layout_constraintTop_toTopOf="@id/amountLabel" />
+
+    <SeekBar
+        android:id="@+id/percentageBar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:max="50"
+        app:layout_constraintBottom_toBottomOf="@+id/percentLabel"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxSplit"
+        app:layout_constraintTop_toTopOf="@+id/percentLabel" />
+
+    <TextView
+        android:id="@+id/finalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/totalLabel"
+        app:layout_constraintStart_toStartOf="@+id/tipResult"
+        app:layout_constraintTop_toTopOf="@+id/totalLabel"
+        tools:text="103.11" />
+
+    <TextView
+        android:id="@+id/splitResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splitedAmt"
+        app:layout_constraintStart_toStartOf="@+id/finalAmount"
+        app:layout_constraintTop_toTopOf="@+id/splitedAmt"
+        tools:text="103.11"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tipResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/tipLabel"
+        app:layout_constraintStart_toStartOf="@+id/percentageBar"
+        app:layout_constraintTop_toTopOf="@+id/tipLabel"
+        tools:text="19.96" />
+
+    <TextView
+        android:id="@+id/tipReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/percentageBar"
+        app:layout_constraintStart_toStartOf="@+id/percentageBar"
+        app:layout_constraintTop_toBottomOf="@+id/percentageBar"
+        tools:text="Greatfull !!" />
+
+    <TextView
+        android:id="@+id/splitLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Split"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/amountLabel"
+        app:layout_constraintTop_toBottomOf="@+id/amountLabel" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/splitLabel"
+        app:layout_constraintStart_toStartOf="@+id/amountInput"
+        app:layout_constraintTop_toTopOf="@+id/splitLabel" />
+
+    <EditText
+        android:id="@+id/splitAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:ems="6"
+        android:hint="No. of people"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBoxSplit"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxSplit"
+        app:layout_constraintTop_toTopOf="@+id/checkBoxSplit"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/splitedAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Amt Per Head"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/totalLabel"
+        app:layout_constraintTop_toBottomOf="@+id/totalLabel"
+        tools:visibility="invisible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
