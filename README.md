@@ -1,4 +1,4 @@
-# Tippy - Tip Calculator 
+# Tipper - Tip Calculator 
 
 <p float="middle">
     <img src="tippyGIf.gif" width="300">
